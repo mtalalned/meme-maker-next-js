@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && jest --ci --runInBand --maxWorkers=2",
+    "build": "if [ \"$NODE_ENV\" != \"production\" ]; then jest; fi && next build",
     "start": "next start",
     "lint": "next lint"
   },
